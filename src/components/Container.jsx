@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextArea from "./TextArea";
 import Stats from "./stats";
-import { MAX_FACEBOOK, MAX_INSTAGRAM } from "./constants";
+import { MAX_FACEBOOK, MAX_INSTAGRAM } from "../lib/constants";
 
 export default function Container() {
   const [text, setText] = useState("");
