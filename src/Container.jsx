@@ -4,10 +4,13 @@ import Stats from "./stats";
 
 export default function Container() {
   const [text, setText] = useState("");
-  const numberOfCharacters = text.length;
-  const numberofWords = text.split(" ").filter((word) => word !== "").length;
-  const instaCharLeft = 280 - numberOfCharacters;
-  const faceCharLeft = 2200 - numberOfCharacters;
+
+  const stats = {
+    numberOfCharacters: text.length,
+    numberofWords: text.split(" ").filter((word) => word !== "").length,
+    instaCharLeft: 280 - text.length,
+    faceCharLeft: 2200 - text.length,
+  };
 
   return (
     <main className="container">
@@ -15,12 +18,7 @@ export default function Container() {
         text={text}
         setText={setText}
       />
-      <Stats
-        numberOfCharacters={numberOfCharacters}
-        instaCharLeft={instaCharLeft}
-        faceCharLeft={faceCharLeft}
-        numberofWords={numberofWords}
-      />
+      <Stats stats={stats} />
     </main>
   );
 }
