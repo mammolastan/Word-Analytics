@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TextArea from "./TextArea";
 import Stats from "./stats";
+import { MAX_FACEBOOK, MAX_INSTAGRAM } from "./constants";
 
 export default function Container() {
   const [text, setText] = useState("");
@@ -8,8 +9,8 @@ export default function Container() {
   const stats = {
     numberOfCharacters: text.length,
     numberofWords: text.split(" ").filter((word) => word !== "").length,
-    instaCharLeft: 280 - text.length,
-    faceCharLeft: 2200 - text.length,
+    instaCharLeft: MAX_INSTAGRAM - text.length,
+    faceCharLeft: MAX_FACEBOOK - text.length,
   };
 
   return (
